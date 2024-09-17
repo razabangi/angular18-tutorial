@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
+import { IMovie } from '@app/interfaces/movies';
 
 @Component({
   selector: 'app-movies',
@@ -12,7 +13,7 @@ import { Component, inject, OnInit } from '@angular/core';
 export class MoviesComponent implements OnInit {
   http = inject(HttpClient);
 
-  movieList: any = [];
+  movieList: IMovie[] = [];
 
   ngOnInit(): void {
     this.http.get('https://api.sampleapis.com/movies/comedy').subscribe((d: any) => {
