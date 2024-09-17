@@ -11,4 +11,5 @@ import { FormsModule } from '@angular/forms';
 export class MasterComponent {
   name: string = "Muhammad Raza Bangi";
   type: string = "checkbox";
+  currency: string = "";
 }
