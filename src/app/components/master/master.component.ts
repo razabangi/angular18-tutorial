@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './master.component.css'
 })
 export class MasterComponent {
-
+  name: string = "Muhammad Raza Bangi";
 }
