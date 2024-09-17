@@ -15,4 +15,11 @@
 
 <p>Your selected currency: {{ currency }}</p>
 
+<div>
+  <p>Hobbies:</p>
+  Cricket:<input type="checkbox" (change)="toggleHobby('cricket', $event)">
+  Painting:<input type="checkbox" (change)="toggleHobby('painting', $event)">
+  Cooking:<input type="checkbox" (change)="toggleHobby('cooking', $event)">
+</div>
 
+<p>Your selected hobbies: {{ hobbies.join(", ") }}</p>

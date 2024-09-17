@@ -12,4 +12,13 @@ export class MasterComponent {
   name: string = "Muhammad Raza Bangi";
   type: string = "checkbox";
   currency: string = "";
+  hobbies: string[] = [];
+
+  toggleHobby(hobby: string, event: any) {
+    if (event.target.checked) {
+      this.hobbies.push(hobby);
+    } else {
+      this.hobbies = this.hobbies.filter(h => h !== hobby);
+    }
+  }
 }
