@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class MasterComponent {
   name: string = "Muhammad Raza Bangi";
+  type: string = "checkbox";
 }
