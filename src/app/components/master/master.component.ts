@@ -1,24 +1,20 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MoviesComponent } from "../movies/movies.component";
+import { CartoonsComponent } from "../cartoons/cartoons.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-master',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MoviesComponent, CartoonsComponent, CommonModule],
   templateUrl: './master.component.html',
   styleUrl: './master.component.css'
 })
 export class MasterComponent {
-  name: string = "Muhammad Raza Bangi";
-  type: string = "checkbox";
-  currency: string = "";
-  hobbies: string[] = [];
+  currentTab: string = "movies";
 
-  toggleHobby(hobby: string, event: any) {
-    if (event.target.checked) {
-      this.hobbies.push(hobby);
-    } else {
-      this.hobbies = this.hobbies.filter(h => h !== hobby);
-    }
+  selectTab(value: string) {
+    this.currentTab = value;
   }
 }

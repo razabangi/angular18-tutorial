@@ -1,27 +1,17 @@
-<h2>Hello {{ name }}</h2>
-<br />
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center mt-2">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn" [ngClass]="currentTab == 'movies' ? 'btn-success' : 'btn-info'" (click)="selectTab('movies')">Movies</button>
+        <button type="button" class="btn" [ngClass]="currentTab == 'cartoons' ? 'btn-success' : 'btn-info'" (click)="selectTab('cartoons')">Cartoons</button>
+      </div>
+    </div>
 
-<h5>Form:</h5>
-<input type="text" [value]="name"><br />
-<input [type]="type"><br />
-
-<h5>Two Way binding:</h5>
-<input type="text" [(ngModel)]="name"> <br /><br />
-
-<select [(ngModel)]="currency">
-  <option value="PK">PKR</option>
-  <option value="USD">USD</option>
-</select>
-
-<p>Your selected currency: {{ currency }}</p>
-
-<div>
-  <p>Hobbies:</p>
-  Cricket:<input type="checkbox" (change)="toggleHobby('cricket', $event)">
-  Painting:<input type="checkbox" (change)="toggleHobby('painting', $event)">
-  Cooking:<input type="checkbox" (change)="toggleHobby('cooking', $event)">
+    <div *ngIf="currentTab == 'movies'">
+      <app-movies></app-movies>
+    </div>
+    <div *ngIf="currentTab == 'cartoons'">
+      <app-cartoons></app-cartoons>
+    </div>
+  </div>
 </div>
-
-<p>Your selected hobbies: {{ hobbies.join(", ") }}</p>
-
-<div class="bg-warning">raza</div>
